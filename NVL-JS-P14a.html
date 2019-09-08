@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>NVL-JS-P14a</title>
+</head>
+<body>
+
+	<ul id="pelis"></ul>
+
+	<script>
+		
+		var pelis = [
+{
+	"Nombre" : "El Señor de los Anillos",
+ 	"Género" : "Fantasía"
+},
+{
+	"Nombre" : "Regreso al Futuro",
+ 	"Género" : "Aventuras"
+},
+{
+	"Nombre" : "Los Increibles 2",
+ 	"Género" : "Animación"
+},
+{
+	"Nombre" : "Star Wars",
+ 	"Género" : "Ciencia Ficción"
+},
+{
+	"Nombre" : "Conan",
+ 	"Género" : "Fantasía"
+},
+{
+	"Nombre" : "Dredd",
+ 	"Género" : "Acción"
+},
+{
+	"Nombre" : "Desaparecido en combate",
+ 	"Género" : "Acción"
+},
+{
+	"Nombre" : "Megamind",
+ 	"Género" : "Animación"
+},
+{
+	"Nombre" : "Mad Max: Fury Road",
+ 	"Género" : "Acción"
+},
+{
+	"Nombre" : "Cristal Oscuro",
+ 	"Género" : "Fantasía"
+},
+{
+	"Nombre" : "Toy Story",
+ 	"Género" : "Animación"
+},
+{
+	"Nombre" : "La Llegada",
+ 	"Género" : "Ciencia Ficción"
+},
+{
+	"Nombre" : "Blade Runner",
+ 	"Género" : "Ciencia Ficción"
+},
+{
+	"Nombre" : "Willow",
+ 	"Género" : "Fantasía"
+},
+{
+	"Nombre" : "Kubo y las dos cuerdas mágicas",
+ 	"Género" : "Animación"
+},
+{
+	"Nombre" : "La Princesa Prometida",
+ 	"Género" : "Comedia Romántica"
+},
+{
+	"Nombre" : "El lado bueno de las cosas",
+ 	"Género" : "Comedia Romántica"
+},
+{
+	"Nombre" : "Antes del amanecer",
+ 	"Género" : "Comedia Romántica"
+},
+{
+	"Nombre" : "La Jungla de Cristal",
+ 	"Género" : "Acción"
+},
+{
+	"Nombre" : "The Delta Force",
+ 	"Género" : "Acción"
+}
+];
+
+		var icono = '';
+		var outputName = '';
+		//function asignarImagen(){
+			//var len = //longitud del JSON
+			for(i=0;i<pelis.length;i++){
+				/*Lo que quiero hacer es que vaya comprobando los elementos del JSON uno a uno, y que lea lo que pone en el [2], y dependiendo de lo que ponga en el [2], asignarle un icono.
+				Representaré los elementos del JSON en una tabla de 3 columnas.
+				En la primera, el icono, en la segunda el nombre de la peli, en la terera el género.*/
+				if(pelis[i].Género=="Acción"){
+					icono = '<img src="icono_accion.jpg" alt="Acción" height="15" width="15">';
+				}else if (pelis[i].Género=="Fantasía"){
+					icono = '<img src="icono_fantasia.jpg" alt="Fantasía" height="15" width="15">';
+				}else if (pelis[i].Género=="Ciencia Ficción"){
+					icono = '<img src="icono_scifi.jpg" alt="Ciencia Ficción" height="15" width="15">';
+				}else if (pelis[i].Género=="Comedia Romántica"){
+					icono = '<img src="icono_romcom.jpg" alt="Comedia Romántica" height="15" width="15">';
+				}else if (pelis[i].Género=="Animación"){
+					icono = '<img src="icono_animacion.jpg" alt="Animación" height="15" width="15">';
+				}else if (pelis[i].Género=="Aventuras"){
+					icono = '<img src="icono_aventuras.jpg" alt="Aventuras" height="15" width="15">';
+				}
+				outputName += '<li>' + pelis[i].Nombre + ' - ' + pelis[i].Género + ' - ' + icono + '</li>';
+			} 
+		//}
+		document.getElementById("pelis").innerHTML = outputName;
+	</script>
+</body>
+</html>
